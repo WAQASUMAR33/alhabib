@@ -44,6 +44,7 @@ export async function POST(request) {
           title: passenger.title,
           type: passenger.type || 'Adult',
           passportid: passenger.passport,
+          flight_number:passenger.flight_number,
           dob: passenger.dob,
           doe: passenger.doe,
         },

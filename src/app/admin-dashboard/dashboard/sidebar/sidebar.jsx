@@ -94,6 +94,25 @@ const Sidebar = () => {
           icon: <PlaneLanding className="h-5 w-5" />,
           roles: ["admin", "sub admin"],
         },
+        // {
+        //   title: "Flights Bookings",
+        //   path: "/admin-dashboard/Flight-Booking-Management",
+        //   icon: <PlaneLanding className="h-5 w-5" />,
+        //   roles: ["admin", "sub admin"],
+        // },
+        // {
+        //   title: "Group Flights Bookings",
+        //   path: "/admin-dashboard/Group-Flight-Booking-Management",
+        //   icon: <PlaneLanding className="h-5 w-5" />,
+        //   roles: ["admin", "sub admin"],
+        // },
+      ]
+    },
+    {
+      title: "Bookings",
+      icon: <Hotel className="h-5 w-5" />,
+      roles: ["admin", "sub admin"],
+      subitems: [
         {
           title: "Flights Bookings",
           path: "/admin-dashboard/Flight-Booking-Management",
@@ -104,6 +123,24 @@ const Sidebar = () => {
           title: "Group Flights Bookings",
           path: "/admin-dashboard/Group-Flight-Booking-Management",
           icon: <PlaneLanding className="h-5 w-5" />,
+          roles: ["admin", "sub admin"],
+        },
+        {
+          title: "Hotel Booking",
+          path: "/admin-dashboard/Hotel-Management/Hotel-Booking",
+          icon: <PiHandWithdraw className="h-5 w-5" />,
+          roles: ["admin", "sub admin"],
+        },
+        {
+          title: "Package Bookings",
+          path: "/admin-dashboard/Package-Booking-Management",
+          icon: <FaBoxOpen className="h-5 w-5" />,
+          roles: ["admin", "sub admin"],
+        },
+        {
+          title: "Payment Requests",
+          path: "/admin-dashboard/Payment-Management",
+          icon: <BiCoinStack className="h-5 w-5" />,
           roles: ["admin", "sub admin"],
         },
       ]
@@ -125,12 +162,12 @@ const Sidebar = () => {
           icon: <Home className="h-5 w-5" />,
           roles: ["admin", "sub admin"],
         },
-        {
-          title: "Hotel Booking",
-          path: "/admin-dashboard/Hotel-Management//Hotel-Booking",
-          icon: <PiHandWithdraw className="h-5 w-5" />,
-          roles: ["admin", "sub admin"],
-        },
+        // {
+        //   title: "Hotel Booking",
+        //   path: "/admin-dashboard/Hotel-Management//Hotel-Booking",
+        //   icon: <PiHandWithdraw className="h-5 w-5" />,
+        //   roles: ["admin", "sub admin"],
+        // },
       ]
     },
     {
@@ -176,12 +213,12 @@ const Sidebar = () => {
     //   icon: <PlaneLanding className="h-5 w-5" />,
     //   roles: ["admin", "sub admin"],
     // },
-    {
-      title: "Package Bookings",
-      path: "/admin-dashboard/Package-Booking-Management",
-      icon: <FaBoxOpen className="h-5 w-5" />,
-      roles: ["admin", "sub admin"],
-    },
+    // {
+    //   title: "Package Bookings",
+    //   path: "/admin-dashboard/Package-Booking-Management",
+    //   icon: <FaBoxOpen className="h-5 w-5" />,
+    //   roles: ["admin", "sub admin"],
+    // },
     // {
     //   title: "Ticket Bookings",
     //   path: "/admin-dashboard/Ticket-Booking-Management",
@@ -194,12 +231,12 @@ const Sidebar = () => {
     //   icon: <FaPassport className="h-5 w-5" />,
     //   roles: ["admin", "sub admin"],
     // },
-    {
-      title: "Payment Requests",
-      path: "/admin-dashboard/Payment-Management",
-      icon: <BiCoinStack className="h-5 w-5" />,
-      roles: ["admin", "sub admin"],
-    },
+    // {
+    //   title: "Payment Requests",
+    //   path: "/admin-dashboard/Payment-Management",
+    //   icon: <BiCoinStack className="h-5 w-5" />,
+    //   roles: ["admin", "sub admin"],
+    // },
     {
       title: "Ledgers",
       path: "/admin-dashboard/Ledgers",

@@ -63,8 +63,9 @@ export default function BookingDetails({ booking, onApprove, onReject, isLoading
               <TableHead>Name</TableHead>
               <TableHead>Type</TableHead>
               <TableHead>Passport Id</TableHead>
-              <TableHead>DOB</TableHead>
-              <TableHead>DOE</TableHead>
+              <TableHead>Flight Number</TableHead>
+              <TableHead>Note</TableHead>
+              {/* <TableHead>DOE</TableHead> */}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -73,8 +74,9 @@ export default function BookingDetails({ booking, onApprove, onReject, isLoading
                 <TableCell>{Hotelier.title} {Hotelier.givenname} {Hotelier.surname}</TableCell>
                 <TableCell>{Hotelier.type}</TableCell>
                 <TableCell>{Hotelier.passportid}</TableCell>
+                <TableCell>{Hotelier.flight_number}</TableCell>
                 <TableCell>{Hotelier.dob}</TableCell>
-                <TableCell>{Hotelier.doe}</TableCell>
+                {/* <TableCell>{Hotelier.doe}</TableCell> */}
               </TableRow>
             ))}
           </TableBody>

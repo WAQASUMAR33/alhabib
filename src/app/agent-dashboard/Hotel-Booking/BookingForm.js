@@ -21,6 +21,7 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
   const [price, setPrice] = useState('');
   const [totalprice, settotalprice]= useState('')
   const [nights, setNights] = useState(0);
+  const [pkrprice,setpkrprice]=useState(0)
 
   //new code start 
   // const filteredRoomTypes = hotels
@@ -66,6 +67,35 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
     setSelectedRoomType(''); 
   }, [selectedHotel, hotels, roomTypes]);
 
+  async function getCurrencies() {
+    try {
+      const response = await fetch("https://v6.exchangerate-api.com/v6/1dbb41a83209c96a0e5dc186/latest/SAR");
+      if (!response.ok) {
+        throw new Error("Failed to fetch currency data");
+      }
+      const data = await response.json();
+      console.log("Currencies data:", data);
+      return data;
+    } catch (error) {
+      console.error("Error fetching currencies:", error);
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    const fetchCurrencies = async () => {
+      const allCurrencies = await getCurrencies();
+      console.log("All currencies:", allCurrencies);
+
+      if (allCurrencies && allCurrencies.conversion_rates) {
+        const exchangeRate = allCurrencies.conversion_rates.PKR; // Assuming you want SAR to PKR
+        const convertedPrice = totalprice * exchangeRate;
+        setpkrprice(convertedPrice);
+      }
+    };
+
+    fetchCurrencies();
+  }, [totalprice]); // Re-run when totalprice changes
   
   useEffect(() => {
     if (!selectedRoomType) {
@@ -86,13 +116,13 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
     const newPassengers = [];
 
     for (let i = 0; i < adults; i++) {
-      newPassengers.push({ type: "Adult", surname: "", givenName: "", title: "Mr/Mrs", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Adult", surname: "", givenName: "", title: "Mr/Mrs",flight_number:"", passport: "", dob: "", doe: "" });
     }
     for (let i = 0; i < children; i++) {
-      newPassengers.push({ type: "Child", surname: "", givenName: "", title: "CHD", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Child", surname: "", givenName: "", title: "CHD",flight_number:"", passport: "", dob: "", doe: "" });
     }
     for (let i = 0; i < infants; i++) {
-      newPassengers.push({ type: "Infant", surname: "", givenName: "", title: "INF", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Infant", surname: "", givenName: "", title: "INF",flight_number:"", passport: "", dob: "", doe: "" });
     }
 
     setPassengers(newPassengers);
@@ -266,6 +296,18 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
               required
             />
           </div>
+          <div>
+            <label htmlFor="price" className="block text-sm font-medium">
+              Price in Pkr
+            </label>
+            <Input
+              type="number"
+              name="pkrprice"
+              value={pkrprice}
+              readOnly
+              required
+            />
+          </div>
           {['remarks'].map((field) => (
             <div key={field}>
               <label htmlFor={field} className="block text-sm font-medium">
@@ -361,15 +403,23 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
                       />
                     </div>
                     <div>
-                      <Label>Date of Birth (DOB)</Label>
+                      <Label>Flight Number</Label>
                       <Input
-                        type="date"
-                        placeholder="DOB"
+                        placeholder="Flight Number"
+                        value={passenger.flight_number}
+                        onChange={(e) => handlePassengerChange(index, "flight_number", e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <Label>Note</Label>
+                      <Input
+                        type="text"
+                        placeholder="Note"
                         value={passenger.dob}
                         onChange={(e) => handlePassengerChange(index, "dob", e.target.value)}
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <Label>Date of Expiry (DOE)</Label>
                       <Input
                         type="date"
@@ -377,7 +427,7 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
                         value={passenger.doe}
                         onChange={(e) => handlePassengerChange(index, "doe", e.target.value)}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}

@@ -137,8 +137,8 @@ export default function AddBookingRequest() {
                 <th className="px-4 py-2 text-left font-medium">Booking ID</th>
                 <th className="px-4 py-2 text-left font-medium">Package ID</th>
                 <th className="px-4 py-2 text-left font-medium">Total Amount</th>
-                <th className="px-4 py-2 text-left font-medium">Paid Amount</th>
-                <th className="px-4 py-2 text-left font-medium">Remaining Amount</th>
+                {/* <th className="px-4 py-2 text-left font-medium">Paid Amount</th>
+                <th className="px-4 py-2 text-left font-medium">Remaining Amount</th> */}
                 <th className="px-4 py-2 text-left font-medium">Status</th>
               </tr>
             </thead>
@@ -148,8 +148,8 @@ export default function AddBookingRequest() {
                   <td className="px-4 py-2">{booking.booking_id}</td>
                   <td className="px-4 py-2">{booking.package_id}</td>
                   <td className="px-4 py-2">{booking.total_amount}</td>
-                  <td className="px-4 py-2">{booking.paid_amount}</td>
-                  <td className="px-4 py-2">{booking.remaining_amount}</td>
+                  {/* <td className="px-4 py-2">{booking.paid_amount}</td>
+                  <td className="px-4 py-2">{booking.remaining_amount}</td> */}
                   <td className="px-4 py-2">{booking.status}</td>
                 </tr>
               ))}

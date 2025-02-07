@@ -60,8 +60,8 @@ export default function AllBookings() {
               <th className="px-4 py-2 text-left font-medium">Title</th>
               <th className="px-4 py-2 text-left font-medium">Type</th>
               <th className="px-4 py-2 text-left font-medium">Total Amount</th>
-              <th className="px-4 py-2 text-left font-medium">Paid Amount</th>
-              <th className="px-4 py-2 text-left font-medium">Remaining Amount</th>
+              {/* <th className="px-4 py-2 text-left font-medium">Paid Amount</th>
+              <th className="px-4 py-2 text-left font-medium">Remaining Amount</th> */}
               <th className="px-4 py-2 text-left font-medium">Status</th>
             </tr>
           </thead>
@@ -72,8 +72,8 @@ export default function AllBookings() {
                 <td className="px-4 py-2">{booking.Packages?.title || booking.Tickets?.title || booking.Visa?.title || 'N/A'}</td>
                 <td className="px-4 py-2">{booking.type}</td>
                 <td className="px-4 py-2">{booking.total_amount || 'N/A'}</td>
-                <td className="px-4 py-2">{booking.paid_amount || 'N/A'}</td>
-                <td className="px-4 py-2">{booking.remaining_amount || 'N/A'}</td>
+                {/* <td className="px-4 py-2">{booking.paid_amount || 'N/A'}</td>
+                <td className="px-4 py-2">{booking.remaining_amount || 'N/A'}</td> */}
                 <td className="px-4 py-2">{booking.status || 'N/A'}</td>
               </tr>
             ))}

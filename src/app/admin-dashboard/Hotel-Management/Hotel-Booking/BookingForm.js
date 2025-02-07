@@ -86,13 +86,13 @@ export default function BookingForm({ onSubmit,location, initialData, hotels, ro
     const newPassengers = [];
 
     for (let i = 0; i < adults; i++) {
-      newPassengers.push({ type: "Adult", surname: "", givenName: "", title: "Mr/Mrs", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Adult", surname: "", givenName: "", title: "Mr/Mrs",flight_number:"", passport: "", dob: "", doe: "" });
     }
     for (let i = 0; i < children; i++) {
-      newPassengers.push({ type: "Child", surname: "", givenName: "", title: "CHD", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Child", surname: "", givenName: "", title: "CHD",flight_number:"", passport: "", dob: "", doe: "" });
     }
     for (let i = 0; i < infants; i++) {
-      newPassengers.push({ type: "Infant", surname: "", givenName: "", title: "INF", passport: "", dob: "", doe: "" });
+      newPassengers.push({ type: "Infant", surname: "", givenName: "", title: "INF",flight_number:"", passport: "", dob: "", doe: "" });
     }
 
     setPassengers(newPassengers);
@@ -359,17 +359,25 @@ export default function BookingForm({ onSubmit,location, initialData, hotels, ro
                         value={passenger.passport}
                         onChange={(e) => handlePassengerChange(index, "passport", e.target.value)}
                       />
+                    </div> 
+                    <div>
+                      <Label>Flight Number</Label>
+                      <Input
+                        placeholder="Flight Number"
+                        value={passenger.flight_number}
+                        onChange={(e) => handlePassengerChange(index, "flight_number", e.target.value)}
+                      />
                     </div>
                     <div>
-                      <Label>Date of Birth (DOB)</Label>
+                      <Label>Note</Label>
                       <Input
-                        type="date"
-                        placeholder="DOB"
+                        type="text"
+                        placeholder="Note"
                         value={passenger.dob}
                         onChange={(e) => handlePassengerChange(index, "dob", e.target.value)}
                       />
                     </div>
-                    <div>
+                    {/* <div>
                       <Label>Date of Expiry (DOE)</Label>
                       <Input
                         type="date"
@@ -377,7 +385,7 @@ export default function BookingForm({ onSubmit,location, initialData, hotels, ro
                         value={passenger.doe}
                         onChange={(e) => handlePassengerChange(index, "doe", e.target.value)}
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}

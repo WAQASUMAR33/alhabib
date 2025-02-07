@@ -474,8 +474,9 @@ const LedgerManagement = () => {
                         <TableHead>Name</TableHead>
                         <TableHead>Type</TableHead>
                         <TableHead>Passport Id</TableHead>
-                        <TableHead>DOB</TableHead>
-                        <TableHead>DOE</TableHead>
+                        <TableHead>Flight Number</TableHead>
+                        <TableHead>Note</TableHead>
+                        {/* <TableHead>DOE</TableHead> */}
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -484,8 +485,9 @@ const LedgerManagement = () => {
                           <TableCell>{Hotelier.title} {Hotelier.givenname} {Hotelier.surname}</TableCell>
                           <TableCell>{Hotelier.type}</TableCell>
                           <TableCell>{Hotelier.passportid}</TableCell>
+                          <TableCell>{Hotelier.flight_number}</TableCell>
                           <TableCell>{Hotelier.dob}</TableCell>
-                          <TableCell>{Hotelier.doe}</TableCell>
+                          {/* <TableCell>{Hotelier.doe}</TableCell> */}
                         </TableRow>
                       ))}
                     </TableBody>
