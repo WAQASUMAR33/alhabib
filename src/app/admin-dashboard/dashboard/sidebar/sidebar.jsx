@@ -108,8 +108,42 @@ const Sidebar = () => {
         // },
       ]
     },
+   
     {
-      title: "Bookings",
+      title: "Hotel Management",
+      icon: <Hotel className="h-5 w-5" />,
+      roles: ["admin", "sub admin"],
+      subitems: [
+        {
+          title: "Room Types",
+          path: "/admin-dashboard/Hotel-Management/Room-Type",
+          icon: <Home className="h-5 w-5" />,
+          roles: ["admin", "sub admin"],
+        },
+        {
+          title: "Hotels",
+          path: "/admin-dashboard/Hotel-Management/Hotel",
+          icon: <Home className="h-5 w-5" />,
+          roles: ["admin", "sub admin"],
+        },
+        // {
+        //   title: "Hotel Booking",
+        //   path: "/admin-dashboard/Hotel-Management//Hotel-Booking",
+        //   icon: <PiHandWithdraw className="h-5 w-5" />,
+        //   roles: ["admin", "sub admin"],
+        // },
+      ]
+    },
+    {
+      title: "Package Management",
+      path: "/admin-dashboard/Package-Management",
+      icon: <FaSuitcaseRolling className="h-5 w-5" />,
+      roles: ["admin", "sub admin"],
+    },
+
+
+    {
+      title: "Requests",
       icon: <Hotel className="h-5 w-5" />,
       roles: ["admin", "sub admin"],
       subitems: [
@@ -144,37 +178,6 @@ const Sidebar = () => {
           roles: ["admin", "sub admin"],
         },
       ]
-    },
-    {
-      title: "Hotel Management",
-      icon: <Hotel className="h-5 w-5" />,
-      roles: ["admin", "sub admin"],
-      subitems: [
-        {
-          title: "Room Types",
-          path: "/admin-dashboard/Hotel-Management/Room-Type",
-          icon: <Home className="h-5 w-5" />,
-          roles: ["admin", "sub admin"],
-        },
-        {
-          title: "Hotels",
-          path: "/admin-dashboard/Hotel-Management/Hotel",
-          icon: <Home className="h-5 w-5" />,
-          roles: ["admin", "sub admin"],
-        },
-        // {
-        //   title: "Hotel Booking",
-        //   path: "/admin-dashboard/Hotel-Management//Hotel-Booking",
-        //   icon: <PiHandWithdraw className="h-5 w-5" />,
-        //   roles: ["admin", "sub admin"],
-        // },
-      ]
-    },
-    {
-      title: "Package Management",
-      path: "/admin-dashboard/Package-Management",
-      icon: <FaSuitcaseRolling className="h-5 w-5" />,
-      roles: ["admin", "sub admin"],
     },
     // {
     //   title: "Visa Management",

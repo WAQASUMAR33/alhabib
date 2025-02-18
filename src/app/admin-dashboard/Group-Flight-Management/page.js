@@ -317,7 +317,7 @@ export default function SingleGroupFlightManagement() {
                                             <option value="">Select Flight Sector</option>
                                             {sectors.map((sector) => (
                                                 <option key={sector.id} value={sector.id}>
-                                                    {sector.to + ' - ' + sector.from + (sector.to2 ? ' - ' + sector.to2 : '')}
+                                                    {sector.from + ' - ' + sector.to + (sector.to2 ? ' - ' + sector.to2 : '')}
                                                 </option>
                                             ))}
                                         </select>
@@ -598,7 +598,7 @@ export function DisplayFlightDetails({ flight }) {
             </div>
             <div className="flex flex-col">
               <label className="font-semibold">Flight Sector</label>
-              <p>{flight.FlightSector?.to + ' - ' + flight.FlightSector?.from + (flight.FlightSector?.to2 ? ' - ' + flight.FlightSector?.to2 : '')}</p>
+              <p>{flight.FlightSector?.from + ' - ' + flight.FlightSector?.to + (flight.FlightSector?.to2 ? ' - ' + flight.FlightSector?.to2 : '')}</p>
             </div>
             <div className="flex flex-col">
               <label className="font-semibold">Flight Airline</label>

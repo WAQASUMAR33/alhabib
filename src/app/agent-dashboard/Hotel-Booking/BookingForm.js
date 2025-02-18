@@ -144,7 +144,7 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
     bookingData.childs = children;
     bookingData.infants = infants;
     bookingData.passengers = passengers;
-
+    bookingData.totalprice =  pkrprice;
     onSubmit(bookingData);
   };
 

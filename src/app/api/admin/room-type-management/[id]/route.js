@@ -67,19 +67,19 @@ export async function DELETE(req, { params }) {
     const { id } = params;
 
     // Check if the package exists
-    const roomType = await prisma.hotel.findUnique({
-      where: { id: parseInt(id, 10) }, // Ensure id is an integer
-    });
+    // const roomType = await prisma.hotel.findUnique({
+    //   where: { id: parseInt(id, 10) }, // Ensure id is an integer
+    // });
 
-    if (!roomType) {
-      return NextResponse.json(
-        {
-          message: 'roomType not found',
-          status: false,
-        },
-        { status: 404 }
-      );
-    }
+    // if (!roomType) {
+    //   return NextResponse.json(
+    //     {
+    //       message: 'roomType not found',
+    //       status: false,
+    //     },
+    //     { status: 404 }
+    //   );
+    // }
 
     // Delete the package
     await prisma.roomType.delete({

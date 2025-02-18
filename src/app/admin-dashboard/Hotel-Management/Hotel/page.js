@@ -332,7 +332,7 @@ export default function HotelManagement() {
                       <Button onClick={() => handleUpdateHotel(hotel)} variant="ghost">
                         <PencilIcon className="h-4 w-4" />
                       </Button>
-                      {/* <Button
+                      <Button
                         onClick={() => handleDeleteHotel(hotel.id)}
                         variant="ghost"
                         className="text-red-600"
@@ -343,7 +343,7 @@ export default function HotelManagement() {
                         ) : (
                           <TrashIcon className="h-4 w-4" />
                         )}
-                      </Button> */}
+                      </Button>
                     </TableCell>
                   </TableRow>
                 ))}
