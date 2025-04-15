@@ -67,7 +67,7 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
     setSelectedRoomType(''); 
   }, [selectedHotel, hotels, roomTypes]);
 
-  async function getCurrencies() {
+async function getCurrencies() {
     try {
       const response = await fetch("https://v6.exchangerate-api.com/v6/1dbb41a83209c96a0e5dc186/latest/SAR");
       if (!response.ok) {
@@ -75,7 +75,7 @@ export default function BookingForm({ onSubmit, initialData, hotels,location, ro
       }
       const data = await response.json();
       console.log("Currencies data:", data);
-      return data;
+      return data;  
     } catch (error) {
       console.error("Error fetching currencies:", error);
       return null;

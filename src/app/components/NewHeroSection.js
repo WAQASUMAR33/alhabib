@@ -14,11 +14,13 @@ import {
 import Image from 'next/image'
 
 const backgroundImages = [
-  "/bg/bg (1).jpeg",
-  "/bg/bg (2).jpeg",
-  "/bg/bg (3).jpeg",
-  "/bg/bg (4).jpeg",
-  "/bg/bg (5).jpeg",
+  "/herosection/slider3.jpg",
+  "/herosection/slider4.jpg",
+  "/herosection/hero2.jpg",
+  "/herosection/slider1.png",
+  "/herosection/slider2.jpg",
+
+
 ]
 
 export default function NewHeroSection() {
@@ -68,9 +70,9 @@ export default function NewHeroSection() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto md:max-w-7xl px-4 mt-20 md:mt-0 md:pt-20  md:px-8 ">
-        <h1 className="text-center text-xl md:text-4xl capitalize p-4 md:p-6 border-4 border-white bg-black/10 backdrop-blur-sm font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        {/* <h1 className="text-center text-xl md:text-4xl capitalize p-4 md:p-6 border-4 border-white bg-black/10 backdrop-blur-sm font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           Discover the real value of travel
-        </h1>
+        </h1> */}
 
         {/* Search Form */}
         <div className="relative mx-auto  mt-10 m-4 w-full md:max-w-4xl rounded-xl shadow-lg">

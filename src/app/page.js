@@ -34,7 +34,7 @@ export default function Home(){
     <CallToAction/>
     <Contact/>
     <Newsletter/>
-    <Partners/>
+    {/* <Partners/> */}
     <Footer/>
     </>
   )
