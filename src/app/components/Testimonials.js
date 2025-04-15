@@ -4,12 +4,12 @@ import React from "react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "John Doe",
+      name: "Muhammad Aslam",
       feedback: "The trip was perfectly organized, and the service was excellent. Highly recommended!",
       image: "https://via.placeholder.com/100",
     },
     {
-      name: "Jane Smith",
+      name: "Abaid ur Rehman",
       feedback: "Thanks to Al Habib Travel Agency, my family vacation was stress-free and enjoyable.",
       image: "https://via.placeholder.com/100",
     },
@@ -30,11 +30,11 @@ const Testimonials = () => {
               key={index}
               className="p-2 md:p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg"
             >
-              <img
+              {/* <img
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-16 h-16 rounded-full mx-auto mb-4"
-              />
+              /> */}
               <h3 className="text-xl font-bold text-gray-800">{testimonial.name}</h3>
               <p className="text-gray-600 mt-2 italic">"{testimonial.feedback}"</p>
             </div>
